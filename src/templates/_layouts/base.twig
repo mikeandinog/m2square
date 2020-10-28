@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="{{ currentSite.language }}" dir="{{craft.app.i18n.getLocaleById(currentSite.id).getOrientation()}}">
+<head>
+
+<!-- Template created by Piotr Pogorzelski - craftsnippets.com -->
+
+{% include '_system/seo' %}
+{% include '_system/meta' %}
+<link rel="icon" type="image/png" href="static/img/favicon.png" />
+{% include '_system/favicons' %}
+{# include '_system/fonts' #}
+{# include '_system/static' #}
+<link rel="stylesheet" href="static/css/bulma.css">
+<link rel="stylesheet" href="static/css/app.css">
+<link rel="stylesheet" href="static/css/core_startup.css">
+<link rel="stylesheet" href="static/css/helpers.css">
+{% include '_system/tag_manager' %}
+{% block head %}{% endblock %}
+
+</head>
+
+<body class="{{body_class ?? null}} {{craft.app.request.isMobileBrowser() ? 'is-mobile' : 'is-desktop'}}">
+
+{% include '_components/quick_edit' %}
+{% block layout %}{% endblock %}
+{% block endBody %}{% endblock %}
+
+</body>
+</html>
